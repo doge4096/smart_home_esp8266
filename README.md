@@ -20,11 +20,11 @@
 
 系统由主控端、分控端、阿里云 IoT 平台和 Android APP 组成。主控端负责语音识别与环境采集，分控端负责开关灯执行，两端通过 MQTT 与阿里云通信。整套系统在卧室实际安装并连续运行 4 个月。
 
-## 项目角色与可验证材料
+## 项目概况
 
 - **独立完成**：需求、选型、电路、PCB、结构、固件、云端规则、APP 全部由我完成；
 - **实测**：设备在真实卧室连续运行 4 个月，记录见 [05 测试与分析](docs/05-testing.md)；
-- **可核对**：固件源码在 [firmware/](firmware/)，PCB 工程在 [hardware/](hardware/)，实物照片在 [images/](images/)；
+- **仓库内容**：固件源码在 [firmware/](firmware/)，PCB 工程在 [hardware/](hardware/)，实物照片在 [images/](images/)；
 - **复盘**：[06 复盘](docs/06-retrospective.md) 写了设计取舍、遗留缺陷和如果重做的方案。
 
 ## 功能
