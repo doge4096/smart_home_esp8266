@@ -58,7 +58,7 @@
 云端配置了一条数据流转规则，查询语句为：
 
 ```sql
-SELECT * FROM "/a1R7nAf2L2O/+/user/change"
+SELECT * FROM "/<ProductKey>/+/user/change"
 ```
 
 规则把任意设备发到 `user/change` 的消息，转发到 5 个目标 topic：
@@ -67,15 +67,15 @@ SELECT * FROM "/a1R7nAf2L2O/+/user/change"
 
 | 目标 | Topic |
 | --- | --- |
-| 卧室分控 | `/a1R7nAf2L2O/switch_bedroom/user/change` |
-| 客厅分控 | `/a1R7nAf2L2O/switch_parlor/user/change` |
-| 卧室主控 | `/a1R7nAf2L2O/control_bedroom/user/change` |
-| 客厅主控 | `/a1R7nAf2L2O/control_parlor/user/change` |
-| APP | `/a1R7nAf2L2O/APP_control/user/change` |
+| 卧室分控 | `/<ProductKey>/switch_bedroom/user/change` |
+| 客厅分控 | `/<ProductKey>/switch_parlor/user/change` |
+| 卧室主控 | `/<ProductKey>/control_bedroom/user/change` |
+| 客厅主控 | `/<ProductKey>/control_parlor/user/change` |
+| APP | `/<ProductKey>/APP_control/user/change` |
 
 这种“全量转发”的方式牺牲了一点带宽，换来设备之间的完全解耦：新增分控端时，只需要在规则里加一条转发目标，不用改主控固件。
 
-> 截图中的 ProductKey 属于已停用的测试实例，不包含 DeviceSecret。复现时需要创建自己的产品与设备。
+> 截图中的 ProductKey 与设备密钥已做打码处理，文中统一写作 `<ProductKey>`。复现时需要创建自己的产品与设备。
 
 ## 2. Android APP
 
